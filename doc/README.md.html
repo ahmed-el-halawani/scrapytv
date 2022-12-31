@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>README.md</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" media="all" href="doc-style.css" />
+  <script src="doc-filelist.js"></script>
+  <script>
+    var relativeDir = "";
+    var thisFile = "README.md";
+    var defaultSidebar = true;
+  </script>
+  <script src="doc-script.js"></script>
+
+</head>
+<body>
+  <div id="sidebar_wrapper">
+    <div id="sidebar_switch">
+      <span class="tree">Files</span>
+      <span class="headings">Headings</span>
+    </div>
+    <div id="tree"></div>
+    <div id="headings">
+
+      <div class="heading h1">
+        <a href="#egyscrapper"> EgyScrapper</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#description">Description :</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#installation">Installation</a>
+      </div>
+
+      <div class="heading h2">
+        <a href="#usage">Usage :</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#simple-example">Simple Example</a>
+      </div>
+
+      <div class="heading h3">
+        <a href="#existing-routes">Existing routes</a>
+      </div>
+
+    </div>
+  </div>
+  <div id="sidebar-toggle"></div>
+  <div id="container">
+    <div class="docs markdown"><div class="pilwrap" id="egyscrapper">
+  <h1 align="center">
+    <a href="#egyscrapper" name="egyscrapper" class="pilcrow"></a>
+ EgyScrapper
+  </h1>
+</div>
+<p align="center">
+  <b >EgyScrapper is simple Nodejs app that turns egybest website to a consumable api.</b>
+  </p>
+  <br>
+<div class="pilwrap" id="description">
+  <h2>
+    <a href="#description" name="description" class="pilcrow"></a>
+Description :
+  </h2>
+</div>
+<p>EgyScrapper is an api that scrapes the important data in egybest website you can access all the new movies, series and also get a direct link to watch them. and all that is done with this api</p>
+<div class="pilwrap" id="installation">
+  <h2>
+    <a href="#installation" name="installation" class="pilcrow"></a>
+Installation
+  </h2>
+</div>
+<p>clone this repository to your local machine and then install the dependencies :</p>
+<pre><code class="bash">$ git <span class="hljs-built_in">clone</span> https://github.com/BrahimAfa/egyScrapper.git
+$ <span class="hljs-built_in">cd</span> egyScrapper
+$ npm i
+</code></pre>
+<p>after all the dependencies installed you can then run the app:
+&quot;<em>preferred way is with the dev script</em>&quot;</p>
+<pre><code class="bash">$ npm run dev
+</code></pre>
+<div class="pilwrap" id="usage">
+  <h2>
+    <a href="#usage" name="usage" class="pilcrow"></a>
+Usage :
+  </h2>
+</div>
+<div class="pilwrap" id="simple-example">
+  <h3>
+    <a href="#simple-example" name="simple-example" class="pilcrow"></a>
+Simple Example
+  </h3>
+</div>
+<p>you can either call this api in your local host with postman or you web browser or even Curl.</p>
+<pre><code class="bash">$ curl http://localhost:3030/movies
+</code></pre>
+<pre><code class="json">[  {  
+		<span class="hljs-attr">"u"</span>:<span class="hljs-string">"movieID"</span>,  
+		<span class="hljs-attr">"rating"</span>: <span class="hljs-string">"imdbRating"</span>,  
+		<span class="hljs-attr">"img"</span>:<span class="hljs-string">"imageLink"</span>,  
+		<span class="hljs-attr">"title"</span>: <span class="hljs-string">"movieTitle"</span>,  
+		<span class="hljs-attr">"ribon"</span>: <span class="hljs-string">"videoQuality"</span>
+	},
+...
+]
+</code></pre>
+<p>to get a watch link for a certain movie :</p>
+<pre><code class="bash">$ curl http://localhost:3030/watch/movieID
+</code></pre>
+<pre><code class="json">{  
+	<span class="hljs-attr">"watch"</span>: <span class="hljs-string">"link"</span>  
+}
+</code></pre>
+<div class="pilwrap" id="existing-routes">
+  <h3>
+    <a href="#existing-routes" name="existing-routes" class="pilcrow"></a>
+Existing routes
+  </h3>
+</div>
+<ul>
+<li>
+<p><code>/movies</code>
+returns a list of movies and you can submit a page as a query string   <code>/movies?page=4</code> for more results.</p>
+<p>result :</p>
+</li>
+</ul>
+<pre><code class="json">[  {  
+	<span class="hljs-attr">"u"</span>:<span class="hljs-string">"String"</span>,  
+	<span class="hljs-attr">"rating"</span>: <span class="hljs-string">"int"</span>,  
+	<span class="hljs-attr">"img"</span>:<span class="hljs-string">"String"</span>,  
+	<span class="hljs-attr">"title"</span>: <span class="hljs-string">"String"</span>,  
+	<span class="hljs-attr">"ribon"</span>: <span class="hljs-string">"String"</span>
+},
+...
+]
+</code></pre>
+<ul>
+<li>
+<p><code>/series</code>
+returns a list of tv Shows and you can submit a page as a query string   <code>/series?page=4</code> for more results.</p>
+<p>result :</p>
+</li>
+</ul>
+<pre><code class="json">[  {  
+	<span class="hljs-attr">"u"</span>:<span class="hljs-string">"String"</span>,  
+	<span class="hljs-attr">"rating"</span>: <span class="hljs-string">"int"</span>,  
+	<span class="hljs-attr">"img"</span>:<span class="hljs-string">"String"</span>,  
+	<span class="hljs-attr">"title"</span>: <span class="hljs-string">"String"</span>,  
+	<span class="hljs-attr">"ribon"</span>: <span class="hljs-string">"String"</span>
+},
+...
+]
+</code></pre>
+<ul>
+<li><code>/watch/:u</code>
+returns a watch link for the submitted movie</li>
+</ul>
+<pre><code class="json">{  
+	<span class="hljs-attr">"watch"</span>: <span class="hljs-string">"String"</span>  
+}
+</code></pre>
+<ul>
+<li><code>/watch/:u</code></li>
+</ul>
+</div>
+  </div>
+</body>
+</html>
