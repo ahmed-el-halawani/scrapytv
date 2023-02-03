@@ -11,7 +11,7 @@
 		"lint": "eslint ./src",
 		"test": "jest --watch src",
 		"dev": "node ./dist/app",
-		"start": "nodemon --exec npx babel-node ./src/app.js",
+		"start": "npx nodemon --exec npx babel-node ./src/app.js",
 		"clean": "rimraf dist",
 		"build": "babel ./src --out-dir dist",
 		"prod": "npm-run-all clean build"
