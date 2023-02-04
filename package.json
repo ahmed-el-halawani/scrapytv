@@ -10,8 +10,8 @@
 		"lint:fix": "eslint ./src --fix",
 		"lint": "eslint ./src",
 		"test": "jest --watch src",
-		"dev": "node ./dist/app",
-		"start": "node ./src/app",
+		"start": "node ./dist/app",
+		"dev": "nodemon --exec npx babel-node ./src/app.js",
 		"clean": "rimraf dist",
 		"build": "babel ./src --out-dir dist",
 		"prod": "npm-run-all clean build"
